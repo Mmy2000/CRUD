@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>CRUD</title>
 </head>
+
 <body>
     <div class="container p-5 my-3">
         <div class="row px-5">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control border-0 border-bottom " id="productName" placeholder="product name">
+                <input type="email" class="form-control border-0 border-bottom " id="productName"
+                    placeholder="product name">
                 <label for="productName">Product Name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control border-0 border-bottom" id="productPrice" placeholder="product price">
+                <input type="email" class="form-control border-0 border-bottom" id="productPrice"
+                    placeholder="product price">
                 <label for="productPrice">Product Price</label>
             </div>
             <div class="form-floating mb-3">
-                <input list="list" type="email" class="form-control border-0 border-bottom" id="productCat" placeholder="product category">
+                <input list="list" type="email" class="form-control border-0 border-bottom" id="productCat"
+                    placeholder="product category">
                 <label for="productCat">Product Category</label>
                 <datalist id="list">
                     <option value="tv"></option>
@@ -29,13 +34,20 @@
                 </datalist>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control border-0 border-bottom" id="productDesc" placeholder="product desc">
+                <input type="email" class="form-control border-0 border-bottom" id="productDesc"
+                    placeholder="product desc">
                 <label for="productDesc">Product Desc</label>
             </div>
             <button onclick="addProduct()" class="btn btn-outline-info col-2 ">+Add Product</button>
         </div>
     </div>
+    <div class="container">
+        <div class="row" id="rowData">
+            
+        </div>
+    </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>
