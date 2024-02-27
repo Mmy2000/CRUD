@@ -2,7 +2,15 @@ var productName = document.getElementById('productName');
 var productPrice = document.getElementById('productPrice');
 var productCat = document.getElementById('productCat');
 var productDesc = document.getElementById('productDesc');
-var products = [];
+var products ;
+
+if (localStorage.getItem("userProducts")) {
+    products = JSON.parse(localStorage.getItem("userProducts"))
+    displayProduct()
+}else{
+    products = [];
+}
+
 function addProduct() {
     
     var product = {
@@ -12,6 +20,7 @@ function addProduct() {
         desc:productDesc.value
     }
     products.push(product);
+    localStorage.setItem("userProducts",JSON.stringify(products))
     console.log(products);
     clear();
     displayProduct();
@@ -27,7 +36,7 @@ function displayProduct() {
     var box = ''
     for (let i = 0; i < products.length; i++) {
         box += `<div class="card"  style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="img/post-3.jpg" class="card-img-top]" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${products[i].id}</h5>
                     <h5 class="card-title">${products[i].price}</h5>
