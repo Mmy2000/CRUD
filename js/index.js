@@ -66,7 +66,7 @@ function displayProduct() {
     var box = ''
     for (let i = 0; i < products.length; i++) {
         box += `<div class="card"  style="width: 18rem;">
-                <img src="img/post-3.jpg" class="card-img-top]" alt="...">
+                <img src="img/post-3.jpg" class="card-img-top]" class="w-100" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${products[i].id}</h5>
                     <h5 class="card-title">${products[i].price}</h5>
