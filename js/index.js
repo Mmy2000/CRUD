@@ -10,32 +10,32 @@ if (localStorage.getItem("userProducts")) {
 }else{
     products = [];
 }
-function updateProduct(index) {
-    // Populate form fields with selected product details
-    productName.value = products[index].id;
-    productPrice.value = products[index].price;
-    productCat.value = products[index].category;
-    productDesc.value = products[index].desc;
+// function updateProduct(index) {
+//     // Populate form fields with selected product details
+//     productName.value = products[index].id;
+//     productPrice.value = products[index].price;
+//     productCat.value = products[index].category;
+//     productDesc.value = products[index].desc;
 
-}
-function performUpdate(index) {
-    // Update the product details in the products array
-    products[index] = {
-        id: productName.value,
-        price: productPrice.value,
-        category: productCat.value,
-        desc: productDesc.value
-    };
+// }
+// function performUpdate(index) {
+//     // Update the product details in the products array
+//     products[index] = {
+//         id: productName.value,
+//         price: productPrice.value,
+//         category: productCat.value,
+//         desc: productDesc.value
+//     };
 
-    // Save the updated products array in local storage
-    localStorage.setItem("userProducts", JSON.stringify(products));
+//     // Save the updated products array in local storage
+//     localStorage.setItem("userProducts", JSON.stringify(products));
 
-    // Clear the form fields
-    clear();
+//     // Clear the form fields
+//     clear();
 
-    // Display the updated products
-    displayProduct();
-}
+//     // Display the updated products
+//     displayProduct();
+// }
 function addProduct() {
     
     // if (productName.value.trim() === Number || productPrice.value === String || productCat.value === "" ) {
