@@ -43,11 +43,17 @@ function displayProduct() {
                     <h5 class="card-title">${products[i].category}</h5>
                     <p class="card-text">${products[i].desc}</p>
                     <a href="#" class="btn btn btn-outline-warning">Update</a>
-                    <a href="#" class="btn btn btn-outline-danger">Delete</a>
+                    <a href="#" onclick="deleteProduct()" class="btn btn btn-outline-danger">Delete</a>
                 </div>
             </div>`
         
         
     }
     document.getElementById("rowData").innerHTML = box
+}
+
+function deleteProduct(id) {
+    products.splice(id,1);
+    localStorage.setItem("userProducts",JSON.stringify(products));
+    displayProduct();
 }
