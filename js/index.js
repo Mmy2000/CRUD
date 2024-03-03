@@ -13,6 +13,11 @@ if (localStorage.getItem("userProducts")) {
 
 function addProduct() {
     
+    // if (productName.value.trim() === Number || productPrice.value === String || productCat.value === "" ) {
+    //     alert("Please enter a valid info.");
+    //     return;
+    // }
+
     var product = {
         id:productName.value,
         price:productPrice.value,
