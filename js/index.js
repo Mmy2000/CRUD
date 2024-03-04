@@ -65,14 +65,17 @@ function clear() {
 function displayProduct() {
     var box = ''
     for (let i = 0; i < products.length; i++) {
-        box += `<div class="card"  style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">${products[i].id}</h5>
-                    <h5 class="card-title">${products[i].price}</h5>
-                    <h5 class="card-title">${products[i].category}</h5>
-                    <p class="card-text">${products[i].desc}</p>
-                    <a href="#" onclick="updateProduct(${i})" class="btn btn btn-outline-warning">Update</a>
-                    <a href="#" onclick="deleteProduct(${i})" class="btn btn btn-outline-danger">Delete</a>
+        box += `<div class="col-md-3">
+                <div class="inner p-2">
+                    <img src="img/post-3.jpg" class="w-100" alt="">
+                    <div class="content p-2">
+                        <h2>${products[i].id}</h2>
+                        <span>${products[i].price}$</span>
+                        <span class="badge bg-secondary ms-4">${products[i].category}</span>
+                        <p class="mt-2">${products[i].desc}</p>
+                        <a href="#" onclick="updateProduct(${i})" class="btn btn btn-outline-warning">Update</a>
+                        <a href="#" onclick="deleteProduct(${i})" class="btn btn btn-outline-danger">Delete</a>
+                    </div>
                 </div>
             </div>`
         
