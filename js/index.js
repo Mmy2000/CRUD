@@ -119,7 +119,6 @@ function updateProduct(index) {
     updatebtn.classList.replace('d-none','d-block')
 
 }
-console.log(pIndex);
 
 function update() {
     var product = {
@@ -134,10 +133,7 @@ function update() {
     clear()
     addbtn.classList.replace('d-none','d-block')
     updatebtn.classList.replace('d-block','d-none')
-    console.log(pIndex);
 }
-console.log(pIndex);
-
 
 
 
