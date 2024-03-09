@@ -2,7 +2,7 @@ var productName = document.getElementById('productName');
 var productPrice = document.getElementById('productPrice');
 var productCat = document.getElementById('productCat');
 var productDesc = document.getElementById('productDesc');
-var products ;
+var products;
 var addbtn = document.getElementById('addbtn')
 var updatebtn = document.getElementById('updatebtn')
 var pIndex = 0;
@@ -10,64 +10,41 @@ var pIndex = 0;
 if (localStorage.getItem("userProducts")) {
     products = JSON.parse(localStorage.getItem("userProducts"))
     displayProduct(products)
-}else{
+} else {
     products = [];
 }
-// function updateProduct(index) {
-//     // Populate form fields with selected product details
-//     productName.value = products[index].id;
-//     productPrice.value = products[index].price;
-//     productCat.value = products[index].category;
-//     productDesc.value = products[index].desc;
 
-// }
-// function performUpdate(index) {
-//     // Update the product details in the products array
-//     products[index] = {
-//         id: productName.value,
-//         price: productPrice.value,
-//         category: productCat.value,
-//         desc: productDesc.value
-//     };
-
-//     // Save the updated products array in local storage
-//     localStorage.setItem("userProducts", JSON.stringify(products));
-
-//     // Clear the form fields
-//     clear();
-
-//     // Display the updated products
-//     displayProduct();
-// }
 function addProduct() {
     var product_name = productName.value.trim()
     var product_price = productPrice.value.trim()
     var product_cat = productCat.value.trim()
-    
-    if (product_name === "" || product_price === "" || product_cat === "" ) {
+
+    if (product_name === "" || product_price === "" || product_cat === "") {
         alert("Please enter a valid info.");
         return;
     }
 
     var product = {
-        id:productName.value,
-        price:productPrice.value,
-        category:productCat.value,
-        desc:productDesc.value
+        id: productName.value,
+        price: productPrice.value,
+        category: productCat.value,
+        desc: productDesc.value
     }
     products.push(product);
-    localStorage.setItem("userProducts",JSON.stringify(products))
+    localStorage.setItem("userProducts", JSON.stringify(products))
     console.log(products);
     clear();
     displayProduct(products);
 }
+
 function clear() {
-    productName.value = "" 
-    productPrice.value = "" 
-    productCat.value = "" 
-    productDesc.value = "" 
+    productName.value = ""
+    productPrice.value = ""
+    productCat.value = ""
+    productDesc.value = ""
 
 }
+
 function displayProduct(arr) {
     var box = ''
     for (let i = 0; i < arr.length; i++) {
@@ -84,24 +61,23 @@ function displayProduct(arr) {
                     </div>
                 </div>
             </div>`
-        
-        
     }
     document.getElementById("rowData").innerHTML = box
 }
 
 function deleteProduct(id) {
-    products.splice(id,1);
-    localStorage.setItem("userProducts",JSON.stringify(products));
+    products.splice(id, 1);
+    localStorage.setItem("userProducts", JSON.stringify(products));
     displayProduct(products);
 }
+
 function searchProduct(searchKey) {
     var searchArr = []
     for (var i = 0; i < products.length; i++) {
         if (products[i].id.toLowerCase().includes(searchKey.toLowerCase())) {
             searchArr.push(products[i])
         }
-        
+
     }
     displayProduct(searchArr);
 }
@@ -115,27 +91,27 @@ function updateProduct(index) {
     productDesc.value = products[index].desc;
     // addbtn.classList().replace('d-block','d-none')
     // updatebtn.classList().replace('d-block','d-none')
-    addbtn.classList.replace('d-block','d-none')
-    updatebtn.classList.replace('d-none','d-block')
-
+    addbtn.classList.replace('d-block', 'd-none')
+    updatebtn.classList.replace('d-none', 'd-block')
 }
 
 function update() {
     var product = {
-        id:productName.value,
-        price:productPrice.value,
-        category:productCat.value,
-        desc:productDesc.value
+        id: productName.value,
+        price: productPrice.value,
+        category: productCat.value,
+        desc: productDesc.value
     }
-    products.splice(pIndex,1,product)
-    localStorage.setItem("userProducts",JSON.stringify(products));
+    products.splice(pIndex, 1, product)
+    localStorage.setItem("userProducts", JSON.stringify(products));
     displayProduct(products);
     clear()
-    addbtn.classList.replace('d-none','d-block')
-    updatebtn.classList.replace('d-block','d-none')
+    addbtn.classList.replace('d-none', 'd-block')
+    updatebtn.classList.replace('d-block', 'd-none')
 }
 
-
-
-
-
+function regex() {
+    var regexName = /^[A-Z]{1}[a-z]$/
+    var regexPrice = /^(1[0-9]|[2-7][0-9]|80)$/
+    return regex.test(productPrice.value)
+}
